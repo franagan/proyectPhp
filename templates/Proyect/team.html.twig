@@ -1,0 +1,31 @@
+{% extends "Proyect/baseTeams.html.twig" %}
+
+{% block contenido %}
+	<div class="container">
+		<div class="row">
+			<div class="col text-center">
+				<h2>{{team.name}}
+					Nº
+					{{team.code}}</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<img class="card" style="width: 20rem;" src=" {{team.img}} ">
+			</div>
+			<div class="col">
+				<div class="row">
+					<div class="col">{{team.description}}</div>
+				</div>
+				<div
+					class="row">{# <ul>
+												{% for division in teams.divisiones %}
+													<li>{{ division.name }}</li>
+												{% endfor %}
+											</ul> #}
+				</div>
+				<iframe width="560" height="315" src="https://www.youtube.com/embed/sVcmRsvHJb0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+{% endblock %}

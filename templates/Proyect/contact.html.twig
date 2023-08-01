@@ -1,0 +1,11 @@
+{% extends "baseTeams.html.twig" %}
+
+{% block contenido %}
+	<h1>Contacto</h1>
+
+	{{ form_start(contactForm) }}
+	{{ form_row(contactForm.name) }}
+	{{ form_row(contactForm.email) }}
+	{{ form_row(contactForm.message) }}
+	{{ form_end(contactForm) }}
+{% endblock %}

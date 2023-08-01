@@ -3,3 +3,6 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+not_found:
+    path: /not-found
+    controller: App\Controller\NotFoundController::notFound

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<title>
+			{% block title %}Futbol-Teams
+			{% endblock %}
+		</title>
+		{% block stylesheets %}{% endblock %}
+		{% block body %}{% endblock%}
+	</head>
+	<body class="bg-success p-2 text-white bg-opacity-75.bg-gradient">
+		<div class="container">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+				<a class="navbar-brand" href="#"><img height="35px" src="{# LOGO #}"></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div class="navbar-nav">
+						<a class="nav-link active" href="{{path('home')}}">Inicio
+							<span class="sr-only">(current)</span>
+						</a>
+						<a class="nav-link" href="{{path('listTeams')}}">Listar Equipos</a>
+						<a class="nav-link" href="{{path('insertTeam')}}">Crear Equipo</a>
+						<a class="nav-link" href="{{path('insertUser')}}">Register</a>
+						{% if is_granted("ROLE_USER", "ROLE_ADMIN") %}
+							<a class="nav-link" href="{{ path('app_logout') }}">Logout</a>
+						{% else %}
+							<a class="nav-link" href="{{ path('app_login') }}">Login</a>
+						{% endif %}
+
+						{% if is_granted("ROLE_USER")%}
+							<p class="nav-link " href="{{path('listTeams')}}">Hola
+								{{app.user.name}}, ya estas logado</p>
+						{% endif %}
+					</div>
+				</div>
+			</nav>
+			{% block contenido %}
+			<div>
+				<img class="container" src="https://www.deportesinc.com/wp-content/uploads/2022/08/ligas-mas-valiosas-futbol.jpg">
+			</div>
+			<section class="album">
+				<ul class="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2">
+					<li class="card shadow-sm" width="100%" height="125px">
+						<a class="" style="width: 100%;" href=" {{path('listTeams')}} "><img class="img-fluid" src="https://brandemia.org/sites/default/files/sites/default/files/logo_la-liga_antes.jpg"></a>
+					</li>
+					<li class="card shadow-sm" width="100%" height="125px">
+						<a class="" style="width:100%; href=" #"><img class="img-fluid" src="https://i.pinimg.com/originals/dd/a2/4e/dda24eebc5310358157ee51927d4bd66.jpg"></a>
+					</li>
+					<li class="card shadow-sm" width="100%" height="125px">
+						<a class="" style="width: 100%; href=" #"><img class="img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Serie_A_logo_2022.svg/447px-Serie_A_logo_2022.svg.png"></a>
+					</li>
+					<li class="card shadow-sm" width="100%" height="125px">
+						<a class="" style="width: 100%; href=" #"><img class="img-fluid" src="https://marcas-logos.net/wp-content/uploads/2022/06/Bundesliga-Logo-500x313.png"></a>
+					</li>
+				</body>
+				{% endblock%}
+
+				{% block footer %}
+				<footer
+					class="">
+					<!-- Grid container -->
+					<div
+						class="container p-4">
+						<!-- Section: Social media -->
+						<section
+							class="mb-4">
+							<!-- Facebook -->
+							<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+								<i class="fab fa-facebook-f"></i>
+							</a>
+
+							<!-- Twitter -->
+							<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+								<i class="fab fa-twitter"></i>
+							</a>
+
+							<!-- Google -->
+							<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+								<i class="fab fa-google"></i>
+							</a>
+
+							<!-- Instagram -->
+							<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+								<i class="fab fa-instagram"></i>
+							</a>
+
+							<!-- Linkedin -->
+							<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+								<i class="fab fa-linkedin-in"></i>
+							</a>
+
+							<!-- Github -->
+							<a class="btn btn-outline-light btn-floating m-1" href="#!" role="button">
+								<i class="fab fa-github"></i>
+							</a>
+						</section>
+						<!-- Section: Social media -->
+
+						<!-- Section: Form -->
+						<section class="">
+							<form
+								action="">
+								<!--Grid row-->
+								<div
+									class="row d-flex justify-content-center">
+									<!--Grid column-->
+									<div class="col-auto">
+										<p class="pt-2">
+											<strong>Sign up for our newsletter</strong>
+										</p>
+									</div>
+									<!--Grid column-->
+
+									<!--Grid column-->
+									<div
+										class="col-md-5 col-12">
+										<!-- Email input -->
+										<div class="form-outline form-white mb-4">
+											<input type="email" id="form5Example21" class="form-control"/>
+											<label class="form-label" for="form5Example21">Email address</label>
+										</div>
+									</div>
+									<!--Grid column-->
+
+									<!--Grid column-->
+									<div
+										class="col-auto">
+										<!-- Submit button -->
+										<button type="submit" class="btn btn-outline-light mb-4">
+											Subscribe
+										</button>
+									</div>
+									<!--Grid column-->
+								</div>
+								<!--Grid row-->
+							</form>
+						</section>
+						<!-- Section: Form -->
+
+						<!-- Section: Text -->
+						<section class="mb-4">
+							<p>
+								Bienvenido a futbol-Teams
+							</p>
+						</section>
+						<!-- Section: Text -->
+
+						<!-- Section: Links -->
+						<section
+							class="">
+							<!--Grid row-->
+							<div
+								class="row">
+								<!--Grid column-->
+								<div class="col-lg-1 col-md-1 mb-1 mb-md-0">
+									<h5 class="text-uppercase">Contactanos</h5>
+
+									<ul class="list-unstyled mb-0">
+										<li>
+											<a href="#!" class="text-white">Contacto</a>
+										</li>
+									</div>
+									<!--Grid column-->
+								</div>
+								<!--Grid row-->
+							</section>
+							<!-- Section: Links -->
+						</div>
+						<!-- Grid container -->
+
+						<!-- Copyright -->
+						<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+							© 2023 Copyright:
+						</div>
+						<!-- Copyright -->
+					</footer>
+					{% endblock%}</html>
+			</html>
+		</body>
+	</body>
+</html></body></html>
